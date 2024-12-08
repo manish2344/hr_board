@@ -24,6 +24,10 @@ app.get('*', (req, res) => {
     res.send('Hello from server.js!');
   });
 
+app.get("/", (req, res) => {
+    res.send('Hello, World!');
+});
+
 app.use('/api/auth', Auth);
 app.use('/api/candidates',authMiddleware, candidateRoutes);
 app.use('/api/employees',authMiddleware, employeeRoutes);
